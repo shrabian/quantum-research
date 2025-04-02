@@ -137,7 +137,7 @@ H = \sum_\lambda \lambda \ket{\lambda}\bra{\lambda}
 ```
 
 
-where the basis set  $`\boldmath{B} = \{\ket{0}\ket{\lambda}, \ket{1}\ket{\lambda}\}_\lambda`$  spans  $`V`$ . The action of  $`U`$  on each of these basis vectors is
+where the basis set  $`{B} = \{\ket{0}\ket{\lambda}, \ket{1}\ket{\lambda}\}_\lambda`$  spans  $`V`$ . The action of  $`U`$  on each of these basis vectors is
 
 
 ```math
@@ -223,7 +223,7 @@ T & \sqrt{I-T^2}\\
 ```
 
 
-where  $`T = \bra{0}U\ket{0}`$ . The vector space that that  $`U`$  acts on must be spanned by both  $`\boldmath{B}_V = \{\ket{0}\ket{v_k}, \ket{1}\ket{v_k}\}_k`$  and  $`\boldmath{B}_W = \{\ket{0}\ket{w_k}, \ket{1}\ket{w_k}\}_k`$ . Moreover, we see the action of  $`U`$  on each vector in  $`\boldmath{B}_V`$  is
+where  $`T = \bra{0}U\ket{0}`$ . The vector space that that  $`U`$  acts on must be spanned by both  $`{B}_V = \{\ket{0}\ket{v_k}, \ket{1}\ket{v_k}\}_k`$  and  $`{B}_W = \{\ket{0}\ket{w_k}, \ket{1}\ket{w_k}\}_k`$ . Moreover, we see the action of  $`U`$  on each vector in  $`{B}_V`$  is
 
 
 ```math
@@ -267,7 +267,7 @@ U_\phi=\prod_{j=1}^{d/2}e^{i\phi_{2j-1}(2\Pi-I)}U^\dagger e^{i\phi_{2j}(2\tilde{
 \end{pmatrix}
 ```
 
-Since the input and output basis of  $`U_\phi`$  is  $`\boldmath{B}_V`$ , it follows that  $`\text{Poly}(T) = \Pi U_\phi \Pi`$ . In the case where  $`d`$  is odd:
+Since the input and output basis of  $`U_\phi`$  is  $`{B}_V`$ , it follows that  $`\text{Poly}(T) = \Pi U_\phi \Pi`$ . In the case where  $`d`$  is odd:
 
 ```math
 U_\phi =  e^{i\phi_1 (2\tilde{\Pi}-I)}U\prod_{j=1}^{(d-1)/2}e^{i\phi_{2j}(2\Pi-I)}U^\dagger e^{i\phi_{2j+1}(2\tilde{\Pi}-I)}U\\
@@ -286,4 +286,4 @@ U_\phi =  e^{i\phi_1 (2\tilde{\Pi}-I)}U\prod_{j=1}^{(d-1)/2}e^{i\phi_{2j}(2\Pi-I
 \end{pmatrix}
 ```
 
-Now, since the input and output basis of  $`U_\phi`$  are  $`\boldmath{B}_V`$  and  $`\boldmath{B}_W`$  respectively,  $`\text{Poly}(T) = \tilde{\Pi}U_\phi \Pi`$ 
+Now, since the input and output basis of  $`U_\phi`$  are  $`{B}_V`$  and  $`{B}_W`$  respectively,  $`\text{Poly}(T) = \tilde{\Pi}U_\phi \Pi`$ 

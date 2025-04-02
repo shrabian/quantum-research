@@ -13,21 +13,21 @@ U + W = \{\ket{u} + \ket{w} : \ket{u} \in U + \ket{w} \in W\}
 \end{align}
 ```
 
-A strategy to prove that each of (1) and (2) correspond to vector spaces is to apply the subspace test: check each have the  $`\boldmath{0}`$  vector and are closed under addition and scalar multiplication. 
+A strategy to prove that each of (1) and (2) correspond to vector spaces is to apply the subspace test: check each have the  $`{0}`$  vector and are closed under addition and scalar multiplication. 
 
  $`U + W`$   has the nice property that it is the smallest subspace for which  $`U`$  and  $`V`$  are both subspaces. That is, for any  $`X \subseteq V`$  satisfying  $`U, W \subseteq X`$ ,  $`U+W \subseteq X`$  (proven by showing that for all  $`\ket{u}, \ket{w} \in U,W`$ ,  $`\ket{u} + \ket{w} \in X`$ ). Additionally,  $`\text{dim}(U+W) = \text{dim}(U) + \text{dim}(W) - \text{dim}(U \cap W)`$  (proven by constructing a basis of  $`U+W`$  from the bases of  $`U, W`$  and  $`U\cap W`$ .)
 
 ### Direct sum of subpaces
-For two subspaces where  $`U \cap W = \{\boldmath{0}\}`$ ,  $`U+W`$  is called the **direct sum** and given the notation  $`U\oplus W`$ . For all vectors  $`\ket{v}`$  in the composite subspace, there exists unique  $`\ket{u}, \ket{w} \in U, W`$  such that  $`\ket{v} = \ket{u} + \ket{w}`$ . Moreover, for any subspace  $`U`$ , there exists a subspace  $`W\subseteq V`$  such that  $`U\cap W = \{\boldmath{0}\}`$  and  $`U \oplus W = V`$ . This last fact can be proven by extending the basis of  $`U`$  to one that spans  $`V`$ . Finally,  $`\text{dim}(U\oplus W) = \text{dim}(U) + \text{dim}(W)`$ .
+For two subspaces where  $`U \cap W = \{{0}\}`$ ,  $`U+W`$  is called the **direct sum** and given the notation  $`U\oplus W`$ . For all vectors  $`\ket{v}`$  in the composite subspace, there exists unique  $`\ket{u}, \ket{w} \in U, W`$  such that  $`\ket{v} = \ket{u} + \ket{w}`$ . Moreover, for any subspace  $`U`$ , there exists a subspace  $`W\subseteq V`$  such that  $`U\cap W = \{{0}\}`$  and  $`U \oplus W = V`$ . This last fact can be proven by extending the basis of  $`U`$  to one that spans  $`V`$ . Finally,  $`\text{dim}(U\oplus W) = \text{dim}(U) + \text{dim}(W)`$ .
 
 ### Invariant subspaces
-For a linear operator  $`T: V \rightarrow V`$ , a subspace  $`U \subseteq V`$  is  $`T`$ -invariant if for  $`\ket{u} \in U`$ ,  $`T\ket{u} \in U`$ . We can show the subspace is  $`T`$ -invariant if  $`T\ket{u_i} \in U`$  for all basis vectors  $`\boldmath{B}_U = \{\ket{u_i}\}`$  spanning  $`U`$ . If we denote  $`T_U`$  as the restriction of  $`T`$  on  $`U`$ , set  $`\boldmath{B}`$  to be the extension of  $`\boldmath{B}_U`$  to span  $`V`$  and define  $`M_{\boldmath{B}}(A)`$  to be the matrix representation of an operator  $`A`$  in basis  $`\boldmath{B}`$  then  
+For a linear operator  $`T: V \rightarrow V`$ , a subspace  $`U \subseteq V`$  is  $`T`$ -invariant if for  $`\ket{u} \in U`$ ,  $`T\ket{u} \in U`$ . We can show the subspace is  $`T`$ -invariant if  $`T\ket{u_i} \in U`$  for all basis vectors  $`{B}_U = \{\ket{u_i}\}`$  spanning  $`U`$ . If we denote  $`T_U`$  as the restriction of  $`T`$  on  $`U`$ , set  $`{B}`$  to be the extension of  $`{B}_U`$  to span  $`V`$  and define  $`M_{{B}}(A)`$  to be the matrix representation of an operator  $`A`$  in basis  $`{B}`$  then  
 
 
 ```math
-M_{\boldmath{B}}(T) =
+M_{{B}}(T) =
 \begin{pmatrix}
-M_{\boldmath{B}_U}(T_U) & \cdot &\\
+M_{{B}_U}(T_U) & \cdot &\\
 \cdot & \cdot &
 \end{pmatrix}
 ```
@@ -46,15 +46,15 @@ T : V \rightarrow W = \bigoplus_i T_i : \bigoplus_i V_i \rightarrow \bigoplus_i 
 ```
 
 
-For the bases  $`\boldmath{B}_V = \bigcup_i \boldmath{B}_{V_i}`$  and  $`\boldmath{B}_W = \bigcup_i \boldmath{B}_{W_i}`$  where  $`\boldmath{B}_{V_i}`$  and  $`\boldmath{B}_{W_i}`$  are bases of  $`V_i`$  and  $`W_i`$ 
+For the bases  $`{B}_V = \bigcup_i {B}_{V_i}`$  and  $`{B}_W = \bigcup_i {B}_{W_i}`$  where  $`{B}_{V_i}`$  and  $`{B}_{W_i}`$  are bases of  $`V_i`$  and  $`W_i`$ 
 
 
 ```math
-M_{\boldmath{B}_V, \boldmath{B}_W}(T) = 
+M_{{B}_V, {B}_W}(T) = 
 \begin{pmatrix}
-M_{\boldmath{B}_{V_1}, \boldmath{B}_{W_1}}(T_1) & 0 & 0 & \ldots\\
-0 & M_{\boldmath{B}_{V_2}, \boldmath{B}_{W_2}}(T_2) & 0 & \ldots\\
-0 & 0 & M_{\boldmath{B}_{V_3}, \boldmath{B}_{W_3}}(T_3)& \ldots\\
+M_{{B}_{V_1}, {B}_{W_1}}(T_1) & 0 & 0 & \ldots\\
+0 & M_{{B}_{V_2}, {B}_{W_2}}(T_2) & 0 & \ldots\\
+0 & 0 & M_{{B}_{V_3}, {B}_{W_3}}(T_3)& \ldots\\
 \vdots & \vdots & \vdots & \ddots
 \end{pmatrix}
 ```

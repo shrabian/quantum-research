@@ -112,7 +112,7 @@ where the RHS is independent of the  $`\pm`$  index, thus, if we can well approx
 then 
 
 ```math
-\hat{T}^\dag \hat{V}\hat{T} = \sum_\lambda e^{it\lambda}\ket{\lambda}\bra{\lambda}
+\hat{T}^\dagger \hat{V}\hat{T} = \sum_\lambda e^{it\lambda}\ket{\lambda}\bra{\lambda}
 ```
 
 gives the correct solution to Schrodinger's equation at time  $`t`$ .
@@ -146,7 +146,7 @@ Figure 1.b shows that we can construct  $`\hat{U}_\phi = \sum_\lambda \hat{R}_\p
 ```
 
 
-Note (9) holds because in (8), we are exponentiating the eigenvalue decomposition of the  $`X`$  Pauli operator by  $`i\theta_\lambda/2`$  up to a global phase of  $`e^{i\theta_\lambda/2}`$ ; and (5) shows that  $`R_\phi`$ , defined in the previous section, turns out to just be a composition of  $`X`$  and  $`Z`$  rotations. Note, since we'll ultimately be doing compositions of  $`\hat{U}_{\phi_k}`$ , we can get rid of the phase factor  $`e^{i\theta_\lambda/2}`$  by instead alternating  $`\hat{U}_{\phi_j}`$  with  $`\hat{U}^\dag_{\phi_{j+1} + \pi} = \sum_\lambda e^{-i\theta_\lambda/2}R_{\phi_{j+1}}(\theta_\lambda)\ket{u_\lambda}\bra{u_\lambda}`$ .
+Note (9) holds because in (8), we are exponentiating the eigenvalue decomposition of the  $`X`$  Pauli operator by  $`i\theta_\lambda/2`$  up to a global phase of  $`e^{i\theta_\lambda/2}`$ ; and (5) shows that  $`R_\phi`$ , defined in the previous section, turns out to just be a composition of  $`X`$  and  $`Z`$  rotations. Note, since we'll ultimately be doing compositions of  $`\hat{U}_{\phi_k}`$ , we can get rid of the phase factor  $`e^{i\theta_\lambda/2}`$  by instead alternating  $`\hat{U}_{\phi_j}`$  with  $`\hat{U}^\dagger_{\phi_{j+1} + \pi} = \sum_\lambda e^{-i\theta_\lambda/2}R_{\phi_{j+1}}(\theta_\lambda)\ket{u_\lambda}\bra{u_\lambda}`$ .
 
 1.c shows that when the input state in the second register is an eigenvector  $`\ket{u_\lambda}`$  of  $`\hat{W}`$ , this has the effect of selecting the rotation  $`R_\phi(\theta_\lambda)`$  on the ancillary qubit. 1.a and 1.d shows that for an appropriate choice of phases  $`\vec{\phi} \in \mathbb{R}^n`$ , compositions of  $`\hat{U}_{\phi_k}`$ , when the input state on the second register is an eigenvector  $`\ket{u_\lambda}`$ , produces 
 
@@ -206,8 +206,8 @@ Equations (13) and (17) thus show that  $`\mathcal{H}_\lambda`$  is  $`\hat{U}`$
 
 ```math
 \begin{align}
-\hat{U}' = \left(X \otimes I_{a}\otimes I_s\right)(\ket{0}\bra{0}\otimes U + \ket{1}\bra{1}\otimes U^\dag)\\
-=\ket{1}\bra{0}\otimes U + \ket{0}\bra{1}\otimes U^\dag
+\hat{U}' = \left(X \otimes I_{a}\otimes I_s\right)(\ket{0}\bra{0}\otimes U + \ket{1}\bra{1}\otimes U^\dagger)\\
+=\ket{1}\bra{0}\otimes U + \ket{0}\bra{1}\otimes U^\dagger
 \end{align}
 ```
 
@@ -289,7 +289,7 @@ and, from the results of the previous section, if we build a unitary
 then
 
 ```math
-V_{\vec{\phi}} = \prod_{k \text{ odd} \ge 1}^L V^\dag_{\phi_{k+1}+\pi}V\\
+V_{\vec{\phi}} = \prod_{k \text{ odd} \ge 1}^L V^\dagger_{\phi_{k+1}+\pi}V\\
 = \sum_\lambda (A(\theta_{\lambda \pm})I + iB(\theta_{\lambda \pm})Z + iC(\theta_{\lambda \pm})X + iD(\theta_{\lambda \pm})Y) \otimes \ket
 {G_{\lambda \pm}}\bra{G_{\lambda \pm}}
 ```

@@ -14,7 +14,7 @@ U_{11} & U_{12}\\
 U_{21} & U_{22}
 \end{pmatrix}
 =
-VDW^\dag=
+VDW^\dagger=
 \begin{pmatrix}
 V_1 & 0\\
 0 & V_2
@@ -26,19 +26,19 @@ D_{21} & D_{22}
 \begin{pmatrix}
 W_1 & 0\\
 0 & W_2
-\end{pmatrix}^\dag
+\end{pmatrix}^\dagger
 ```
 
 
-where  $`V, D, W, V_{i}`$  and  $`W_{i}`$  are unitary and each  $`D_{ij}`$  is a diagonal matrix. The final equality is achieved by taking a singular value decomposition of  $`U_{11}`$  to produce matrices  $`V_1, D_{11}`$  and  $`W_1`$  as defined above. Then by taking the QR decomposition* of  $`U_{21}W_1`$  and symmetrically  $`U_{12}^\dag V_1`$  we get two upper triagular matrices  $`D_{21}`$  and  $`D_{12}`$  such that
+where  $`V, D, W, V_{i}`$  and  $`W_{i}`$  are unitary and each  $`D_{ij}`$  is a diagonal matrix. The final equality is achieved by taking a singular value decomposition of  $`U_{11}`$  to produce matrices  $`V_1, D_{11}`$  and  $`W_1`$  as defined above. Then by taking the QR decomposition* of  $`U_{21}W_1`$  and symmetrically  $`U_{12}^\dagger V_1`$  we get two upper triagular matrices  $`D_{21}`$  and  $`D_{12}`$  such that
 
 
 ```math
-U_{21}W_{1} = V_2D_{21} \implies U_{21} = V_2D_{21}W_1^\dag\\
-U_{12}^\dag V_1 = D_{12}^\dag W_2 \rightarrow U_{12} = V_1D_{12}W_2^\dag 
+U_{21}W_{1} = V_2D_{21} \implies U_{21} = V_2D_{21}W_1^\dagger\\
+U_{12}^\dagger V_1 = D_{12}^\dagger W_2 \rightarrow U_{12} = V_1D_{12}W_2^\dagger 
 ```
 
-Finally,  $`D_{22} = V_2^\dag U_{22} W_2`$ . The paper then shows that each  $`D_{ii}`$  is a diagonal matrix, but, more saliently, shows the matrix  $`D`$  takes the form
+Finally,  $`D_{22} = V_2^\dagger U_{22} W_2`$ . The paper then shows that each  $`D_{ii}`$  is a diagonal matrix, but, more saliently, shows the matrix  $`D`$  takes the form
 ![](image.png)\
 Where  $`C`$  and  $`S`$  are diagonal matrices with  $`0 < C_{ii}, S_{ii} < 1`$  and that satisfy  $`C^2 + S^2 = I`$ ;  $`I`$  is the identity; and  $`0`$  and blanks are used interchangeably to represent the zero matrix. The layout of  $`D_{11}`$  in the LHS is given by the fact it is the diagonal matrix in the SVD of  $`U_{11}`$  with singular values arranged in increasing order. The layout of the the remaining blocks are implied by the fact that the rows and columns of  $`D`$  are orthonormal and each  $`D_{ii}`$  is an upper triangle.
 
@@ -69,7 +69,7 @@ In essence, unitary  $`U \in \mathbb{C}^{n\times n}`$ , is a block encoding of  
 
 ```math
 \begin{align}
-B_L^\dag UB_R = 
+B_L^\dagger UB_R = 
 \begin{pmatrix}
 A & \cdot\\
 \cdot & \cdot
@@ -78,7 +78,7 @@ A & \cdot\\
 ```
 
 
-Now define  $`B_R = (B_{R,1}, B_{R,2})`$  to be a vertical partition of  $`B_R`$  so that  $`B_{R,1}\in \mathbb{C}^{n\times c}`$  and similarly for  $`B_L`$  to get  $`B_{L,1} \in \mathbb{C}^{n\times r}`$ . From the above its clear that  $`B_{L,1}^\dag U B_{R,1} = A`$ . Further we can define  $`\Pi_L = B_{L,1}B_{L,1}^\dag`$  and  $`\Pi_R  = B_{R,1}B_{R,1}^\dag`$  which are orthogonal projectors to the space spanned by the columns of  $`B_{L,1}`$  and  $`B_{R,1}`$  respectively. 
+Now define  $`B_R = (B_{R,1}, B_{R,2})`$  to be a vertical partition of  $`B_R`$  so that  $`B_{R,1}\in \mathbb{C}^{n\times c}`$  and similarly for  $`B_L`$  to get  $`B_{L,1} \in \mathbb{C}^{n\times r}`$ . From the above its clear that  $`B_{L,1}^\dagger U B_{R,1} = A`$ . Further we can define  $`\Pi_L = B_{L,1}B_{L,1}^\dagger`$  and  $`\Pi_R  = B_{R,1}B_{R,1}^\dagger`$  which are orthogonal projectors to the space spanned by the columns of  $`B_{L,1}`$  and  $`B_{R,1}`$  respectively. 
 
 To put things in perspective, in the Grand Unification of Quantum Algorithms, we restricted ourselves to considering 
 
@@ -120,7 +120,7 @@ i & -i
 ```
 
 
-which is the matrix composed of eigenvectors of  $`Y`$  as columns. Its not difficult to show that for input  $`\ket{\psi}`$  defined in the input basis of  $`A`$ ,  $`U_Y^\dag A\ket{\psi}`$  gives  $`A\ket{\psi}`$  in the  $`Y`$  basis. Similarly, for input  $`\ket{\psi}`$  defined in the  $`Y`$  basis,  $`AU_Y\ket{\psi}`$  gives  $`A\ket{\psi'}`$  in the output basis of  $`A`$ , where  $`\ket{\psi'}`$  is  $`\ket{\psi}`$  in the input basis of  $`A`$ . 
+which is the matrix composed of eigenvectors of  $`Y`$  as columns. Its not difficult to show that for input  $`\ket{\psi}`$  defined in the input basis of  $`A`$ ,  $`U_Y^\dagger A\ket{\psi}`$  gives  $`A\ket{\psi}`$  in the  $`Y`$  basis. Similarly, for input  $`\ket{\psi}`$  defined in the  $`Y`$  basis,  $`AU_Y\ket{\psi}`$  gives  $`A\ket{\psi'}`$  in the output basis of  $`A`$ , where  $`\ket{\psi'}`$  is  $`\ket{\psi}`$  in the input basis of  $`A`$ . 
 
 ## Proof
 
@@ -135,9 +135,9 @@ A & \cdot \\
 \end{pmatrix}
 ```
  
-Next, show that the unitaries  $`V, W`$  produced by the CS decomposition,  $`U = VDW^\dag`$ , commute with the phase operators  $`e^{i\phi(2\Pi_L - I)}`$  and  $`e^{i\phi(2\Pi_R - I)}`$ .
+Next, show that the unitaries  $`V, W`$  produced by the CS decomposition,  $`U = VDW^\dagger`$ , commute with the phase operators  $`e^{i\phi(2\Pi_L - I)}`$  and  $`e^{i\phi(2\Pi_R - I)}`$ .
 
-Then, show that this implies  $`U_\phi = VD_\phi W^\dag`$  when  $`d`$  is even and  $`U_\phi = WD_\phi W^\dag`$  when  $`d`$  is odd since the intermediate  $`V`$  and  $`W`$  cancel out with their adjoint.
+Then, show that this implies  $`U_\phi = VD_\phi W^\dagger`$  when  $`d`$  is even and  $`U_\phi = WD_\phi W^\dagger`$  when  $`d`$  is odd since the intermediate  $`V`$  and  $`W`$  cancel out with their adjoint.
 
 Next show that the phase opertor can be decomposed into the direct sum of three operators in the same way that  $`D`$  can,
 
@@ -197,10 +197,10 @@ The final step of the proof is to then generalise  $`U`$  to the case where  $`B
 \bar{A} & \cdot\\
 \cdot & \cdot
 \end{pmatrix}
-= B_{L}^\dag U B_{R}
+= B_{L}^\dagger U B_{R}
 
 \iff
-U = B_L\bar{U}B_R^\dag
+U = B_L\bar{U}B_R^\dagger
 ```
 
 
@@ -208,13 +208,13 @@ It turns out that
 
 
 ```math
-U_\phi = B_L \bar{U}_\phi B_R^\dag = 
+U_\phi = B_L \bar{U}_\phi B_R^\dagger = 
 B_L
 \begin{pmatrix}
 \text{Poly}(\bar{A}) & \cdot \\
 \cdot & \cdot
 \end{pmatrix}
-B_R^\dag
+B_R^\dagger
 ```
 
 

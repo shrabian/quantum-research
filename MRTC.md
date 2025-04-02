@@ -38,7 +38,7 @@ By measuring in different bases we can extract different properties of  $`U_\phi
 
 ## QSP for amplitude amplification
 
-The problem of amplitude amplification, in its most general form, can be stated as follows. Given unitaries  $`U`$ ,  $`U^\dag`$ ,  $`e^{i\phi \ket{A_0}\bra{A_0}}`$  and  $`e^{i\phi \ket{B_0} \bra{B_0}}`$  (which can greater than two dimensions) construct an efficient circuit  $`Q`$  so that  $`\bra{A_0}Q\ket{B_0} \rightarrow 1`$ , assuming the matrix element  $`\bra{A_0}U\ket{B_0} \neq 0`$ . I'll also include the additional assumption that  $`\bra{A_0}U\ket{B_0} \in \mathbb{R}`$  since we can always absorb any complex phase into  $`\ket{B_0}`$  e.g. by defining  $`\ket{B_0}' = \frac{\bra{A_0}U\ket{B_0}^*}{|\bra{A_0}U\ket{B_0}|}\ket{B_0}`$ .
+The problem of amplitude amplification, in its most general form, can be stated as follows. Given unitaries  $`U`$ ,  $`U^\dagger`$ ,  $`e^{i\phi \ket{A_0}\bra{A_0}}`$  and  $`e^{i\phi \ket{B_0} \bra{B_0}}`$  (which can greater than two dimensions) construct an efficient circuit  $`Q`$  so that  $`\bra{A_0}Q\ket{B_0} \rightarrow 1`$ , assuming the matrix element  $`\bra{A_0}U\ket{B_0} \neq 0`$ . I'll also include the additional assumption that  $`\bra{A_0}U\ket{B_0} \in \mathbb{R}`$  since we can always absorb any complex phase into  $`\ket{B_0}`$  e.g. by defining  $`\ket{B_0}' = \frac{\bra{A_0}U\ket{B_0}^*}{|\bra{A_0}U\ket{B_0}|}\ket{B_0}`$ .
 
 First, we can consider the vectors  $`\ket{A_{\perp}}`$ , orthogonal to  $`\ket{A_0}`$ , and  $`\ket{B_\perp}`$ , orthogonal to  $`\ket{B_0}`$ . These are defined
 
@@ -98,7 +98,7 @@ and symmetrically for  $`e^{i\phi \ket{B_0}\bra{B_0}}`$ . Thus
 
 
 ```math
-\bra{A_0}\left(\prod_{k=1}^{d/2}Ue^{i\phi_{2k-1}\ket{B_0}\bra{B_0}}U^\dag e^{i\phi_{2k}\ket{A_0}\bra{A_0}}\right)U\ket{B_0} \\
+\bra{A_0}\left(\prod_{k=1}^{d/2}Ue^{i\phi_{2k-1}\ket{B_0}\bra{B_0}}U^\dagger e^{i\phi_{2k}\ket{A_0}\bra{A_0}}\right)U\ket{B_0} \\
 = \bra{A_0}\left( e^{i\phi'_0Z}\prod_{k=1}^dW(a)e^{i\phi'_k Z}\right)U\ket{B_0}\\
 =\text{Poly}(a)\cdot a = \text{Poly}(a)
 ```
@@ -137,7 +137,7 @@ H = \sum_\lambda \lambda \ket{\lambda}\bra{\lambda}
 ```
 
 
-where the basis set  $`\bm{B} = \{\ket{0}\ket{\lambda}, \ket{1}\ket{\lambda}\}_\lambda`$  spans  $`V`$ . The action of  $`U`$  on each of these basis vectors is
+where the basis set  $`\boldmath{B} = \{\ket{0}\ket{\lambda}, \ket{1}\ket{\lambda}\}_\lambda`$  spans  $`V`$ . The action of  $`U`$  on each of these basis vectors is
 
 
 ```math
@@ -176,7 +176,7 @@ where the last equality comes from the fact that each subspace  $`\mathbb{C}^2\o
 
 
 ```math
-U_{\vec{\phi}} = \prod_{k=1}^{d/2}\exp(i\phi_{2k-1}(2\Pi - I))U^\dag\exp(i\phi_{2k}(2\Pi - I)) U\\
+U_{\vec{\phi}} = \prod_{k=1}^{d/2}\exp(i\phi_{2k-1}(2\Pi - I))U^\dagger\exp(i\phi_{2k}(2\Pi - I)) U\\
 =\prod_{k=1}^{d/2}\sum_{\lambda, \lambda', \lambda'', \lambda'''} e^{i\phi_{2k-1}Z}R(\lambda')e^{i\phi_{2k}Z}R(\lambda''')\otimes\ket{\lambda}\braket{\lambda | \lambda'}\braket{\lambda'|\lambda''}\braket{\lambda''|\lambda'''}\bra{\lambda'''}\\
 =\prod_{k=1}^{d/2}\sum_\lambda e^{i\phi_{2k-1}Z}R(\lambda)e^{i\phi_{2k}Z}R(\lambda)\otimes\ket{\lambda}\bra{\lambda}\\
 =\sum_\lambda \left[\prod_{k=1}^{d/2} e^{i\phi_{2k-1}Z}R(\lambda)e^{i\phi_{2k}Z}R(\lambda)\right]\otimes \ket{\lambda}\bra{\lambda} \text{ *}\\
@@ -223,7 +223,7 @@ T & \sqrt{I-T^2}\\
 ```
 
 
-where  $`T = \bra{0}U\ket{0}`$ . The vector space that that  $`U`$  acts on must be spanned by both  $`\bm{B}_V = \{\ket{0}\ket{v_k}, \ket{1}\ket{v_k}\}_k`$  and  $`\bm{B}_W = \{\ket{0}\ket{w_k}, \ket{1}\ket{w_k}\}_k`$ . Moreover, we see the action of  $`U`$  on each vector in  $`\bm{B}_V`$  is
+where  $`T = \bra{0}U\ket{0}`$ . The vector space that that  $`U`$  acts on must be spanned by both  $`\boldmath{B}_V = \{\ket{0}\ket{v_k}, \ket{1}\ket{v_k}\}_k`$  and  $`\boldmath{B}_W = \{\ket{0}\ket{w_k}, \ket{1}\ket{w_k}\}_k`$ . Moreover, we see the action of  $`U`$  on each vector in  $`\boldmath{B}_V`$  is
 
 
 ```math
@@ -249,7 +249,7 @@ We'll now introduce two  $`z`$  rotation operators  $`e^{i\phi (2\Pi-I)}`$  and 
 
 
 ```math
-U_\phi=\prod_{j=1}^{d/2}e^{i\phi_{2j-1}(2\Pi-I)}U^\dag e^{i\phi_{2j}(2\tilde{\Pi}-I)}U\\
+U_\phi=\prod_{j=1}^{d/2}e^{i\phi_{2j-1}(2\Pi-I)}U^\dagger e^{i\phi_{2j}(2\tilde{\Pi}-I)}U\\
 =\prod_{j=1}^{d/2}\sum_{k,k',k'',k'''} e^{i\phi_{2j-1}Z}R(\sigma_{k'})e^{i\phi_{2j}Z}R(\sigma_{k'''})\otimes\ket{v_k}\braket{v_k|v_{k'}}\braket{w_{k'}|w_{k''}}\braket{w_{k''}|w_{k'''}}\bra{v_{k'''}} \text{ *}\\
 =\prod_{j=1}^{d/2}\sum_k e^{i\phi_{2j-1}Z}R(\sigma_{k})e^{i\phi_{2j}Z}R(\sigma_{k})\otimes \ket{v_k}\bra{v_k}\\
 =\sum_k \left[\prod_{j=1}^{d/2}e^{i\phi_{2j-1}Z}R(\sigma_{k})e^{i\phi_{2j}Z}R(\sigma_{k})\right]\otimes \ket{v_k}\bra{v_k}\\
@@ -267,10 +267,10 @@ U_\phi=\prod_{j=1}^{d/2}e^{i\phi_{2j-1}(2\Pi-I)}U^\dag e^{i\phi_{2j}(2\tilde{\Pi
 \end{pmatrix}
 ```
 
-Since the input and output basis of  $`U_\phi`$  is  $`\bm{B}_V`$ , it follows that  $`\text{Poly}(T) = \Pi U_\phi \Pi`$ . In the case where  $`d`$  is odd:
+Since the input and output basis of  $`U_\phi`$  is  $`\boldmath{B}_V`$ , it follows that  $`\text{Poly}(T) = \Pi U_\phi \Pi`$ . In the case where  $`d`$  is odd:
 
 ```math
-U_\phi =  e^{i\phi_1 (2\tilde{\Pi}-I)}U\prod_{j=1}^{(d-1)/2}e^{i\phi_{2j}(2\Pi-I)}U^\dag e^{i\phi_{2j+1}(2\tilde{\Pi}-I)}U\\
+U_\phi =  e^{i\phi_1 (2\tilde{\Pi}-I)}U\prod_{j=1}^{(d-1)/2}e^{i\phi_{2j}(2\Pi-I)}U^\dagger e^{i\phi_{2j+1}(2\tilde{\Pi}-I)}U\\
 =\left(\sum_{k'} e^{i\phi_1 Z}R(\sigma_{k'})\otimes \ket{w_{k'}}\bra{v_{k'}}\right) \sum_{k}\left[\prod_{j=1}^{(d-1)/2} e^{i\phi_{2j}Z}R(\sigma_{k})e^{i\phi_{2j+1}Z}R(\sigma_{k})\right]\otimes \ket{v_k}\bra{v_k}\\
 =\sum_k\left[e^{i\phi_1 Z}R(\sigma_k)\prod_{j=1}^{(d-1)/2} e^{i\phi_{2j}Z}R(\sigma_{k})e^{i\phi_{2j+1}Z}R(\sigma_{k})\right]\otimes \ket{w_k}\bra{v_k}\\
 =\sum_k
@@ -286,4 +286,4 @@ U_\phi =  e^{i\phi_1 (2\tilde{\Pi}-I)}U\prod_{j=1}^{(d-1)/2}e^{i\phi_{2j}(2\Pi-I
 \end{pmatrix}
 ```
 
-Now, since the input and output basis of  $`U_\phi`$  are  $`\bm{B}_V`$  and  $`\bm{B}_W`$  respectively,  $`\text{Poly}(T) = \tilde{\Pi}U_\phi \Pi`$ 
+Now, since the input and output basis of  $`U_\phi`$  are  $`\boldmath{B}_V`$  and  $`\boldmath{B}_W`$  respectively,  $`\text{Poly}(T) = \tilde{\Pi}U_\phi \Pi`$ 

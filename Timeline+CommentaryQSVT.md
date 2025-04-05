@@ -132,7 +132,7 @@ for which we want to approximate a general transformation
 and its not difficult to then relate these results back to the specific scenario of Hamiltonian simulation described in equation (5).
 
 Helpfully, the paper includes circuit illustrations for the proposed algorithm which we'll go through now.\
-![alt text](image-3.png)\
+![alt text](images/qsp-circuit.png)\
 Figure 1.b shows that we can construct  $`\hat{U}_\phi = \sum_\lambda \hat{R}_\phi (\theta_\lambda)\otimes \ket{u_\lambda}\bra{u_\lambda}`$  as follows
 
 ```math

@@ -39,7 +39,7 @@ U_{12}^\dagger V_1 = D_{12}^\dagger W_2 \rightarrow U_{12} = V_1D_{12}W_2^\dagge
 ```
 
 Finally,  $`D_{22} = V_2^\dagger U_{22} W_2`$ . The paper then shows that each  $`D_{ii}`$  is a diagonal matrix, but, more saliently, shows the matrix  $`D`$  takes the form
-![](image.png)\
+![](images/cs-decomp.png)\
 Where  $`C`$  and  $`S`$  are diagonal matrices with  $`0 < C_{ii}, S_{ii} < 1`$  and that satisfy  $`C^2 + S^2 = I`$ ;  $`I`$  is the identity; and  $`0`$  and blanks are used interchangeably to represent the zero matrix. The layout of  $`D_{11}`$  in the LHS is given by the fact it is the diagonal matrix in the SVD of  $`U_{11}`$  with singular values arranged in increasing order. The layout of the the remaining blocks are implied by the fact that the rows and columns of  $`D`$  are orthonormal and each  $`D_{ii}`$  is an upper triangle.
 
 Another salient observation is the decomposition of  $`D`$  into the direct sum of three unitary operators shown on the RHS of the above image. This representation confused me a little to begin with because, from my understanding of diret sums
@@ -106,7 +106,7 @@ A & \sqrt{I - A}\\
 The remainder of this section defines QSP for the two dimensional case and the set of polynomials achievable by this algorithm. Interestingly, the set of QSP achievable polynomials is characterised differently to how I usually see it. It says that there exists a QSP-achievable polynomial  $`p \in \mathbb{C}[x]`$  whose real component is given by  $`p_{\mathcal{R}}\in \text{Re}(p)`$  and that is achievable by a tuple of phases  $`\vec{\phi} \in \mathbb{R}^{n+1}`$  if and only if  $`p_{\mathcal{R}}`$  is even or odd and its absolute value is at most one for  $`x\in [-1,1]`$ . 
 
 The section also defines the phase alternating sequence used to generate  $`U_\phi`$  in QSVT, exponentiating reflections  $`2\Pi_L -I`$  and  $`2\Pi_R - I`$  in the usual way.\
-![alt text](image-1.png)
+![alt text](images/qsvt-cs-decomp-formalism.png)\
 The final theorem states in the section gives the promise of QSVT - the phase alternating sequence defined earlier gives a QSP-achievable polynomial transformation of the singular values of  $`U`$ .
 
 \* As an exercise to see why, take an arbitrary matrix  $`A \in \mathbb{C}^{2\times 2}`$  defined on any input/output basis you like (for simplicity both can be the computational basis) and define
@@ -186,7 +186,7 @@ I & 0\\
 
 
 The penultimate step of the proof is to then show that each QSP applied to each of the matrices generates the corresponding polynomial applied to the top left element.\
-![alt text](image-2.png)
+![alt text](images/poly-transform-cs-decomp.png)\
 Where the distinction between odd and even  $`n`$  (which determines the parity of the degree of  $`p`$ ) comes from the fact that, by the conditions of  $`QSP`$ -achievability,  $`p(0)=0`$  for odd  $`n`$  and  $`p(0) = e^{i\sum_{k=0}^n(-1)^k \phi_k}`$  for even  $`n`$ .
 
 The final step of the proof is to then generalise  $`U`$  to the case where  $`B_{L, 1}`$  and  $`B_{R,1}`$  are not necessarily the identity. If we denote  $`U`$  to be a block encoding of  $`A`$  defined in the arbitrary basis (i.e.  $`A`$  is not necessarily a top-left submatrix of  $`U`$ ) and  $`\bar{U}`$  to be a block encoding of  $`\bar{A}`$ , which equals  $`A`$  up to a change in basis, such that  $`\bar{A}`$  appears as a top-left submatrix of  $`\bar{U}`$ . We have

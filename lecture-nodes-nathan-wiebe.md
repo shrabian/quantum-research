@@ -48,4 +48,37 @@ Suppose a matrix  $`P \in \mathbb{R}^{n\times n}`$  has eigenvalues  $`\lambda_1
 ```
  
 
-Now it is convenient to define what's known as the spectral gap, which is  $`\delta = \lambda_1 - `$
+Now it is convenient to define what's known as the spectral gap, which is  $`\Delta = \max\{\lambda_1 - |\lambda_2|,\lambda_1 - |\lambda_n|\} = \max\{1 - |\lambda_2|,1 - |\lambda_n|\}`$  or, the difference between the largest and second larges eigenvalue in absolute terms.
+
+
+### Szegedy quantum walk
+At a high level, Szegedy's quantum walk consider a walker that walks between edges in the Markov chain rather than between vertices. For example, if a Markov chain is given by  $`G = (V, E)`$ , then if  $`(x,y) \in E`$  its analogous vertex interpretation is that  $`(x,y)`$  represents a walker in state  $`y`$  after transitioning from state  $`x`$ .
+
+
+Consider the state:
+
+```math
+\ket{p_x} = \sum_y \sqrt{P_{xy}}\ket{x}\ket{y}, \text{ s.t } x\in V\\
+\ket{p_y} = \sum_x \sqrt{P_{yx}}\ket{x}\ket{y}, \text{ s.t } y \in V
+```
+
+and the corresponding spaces spanned by these states
+
+```math
+A= \text{span}\left(\sum_y \sqrt{P_{xy}}\ket{x}\ket{y}: x\in V\right)\\
+B = \text{span}\left(\sum_x \sqrt{P_{yx}}\ket{x}\ket{y}: y \in V \right)\\
+```
+
+
+We define reflection operators
+
+
+```math
+R_A = I - 2\sum_x \ket{p_x}\bra{p_x}\\
+R_B = I - 2\sum_y \ket{p_y}\bra{p_y}
+```
+
+
+Clearly, the action of  $`R_A`$  and  $`R_B`$  is to apply a  $`-1`$  phase to states in  $`A`$  and  $`B`$  respectively.
+
+The quantum walk operator is given by  $`W = R_B R_A`$ .

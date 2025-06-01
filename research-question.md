@@ -1,0 +1,13 @@
+# Research Questions
+
+1. Can extensions to the QSP/QSVT framework provide speedups or decrease space requirements for the quantum walk search algorithm?
+
+Key to answering this question will be a detailed analysis of the following two QET/QSVT extensions: [quantum eigenvalues processing](https://arxiv.org/abs/2401.06240), [generalised quantum signal processing](https://arxiv.org/abs/2308.01501) and [quantum singular value transform without block encodings](https://arxiv.org/abs/2504.02385). Since the current state of the art in quantum search on Markov chains assumes the chain is reversible, this means that the discriminant matrix, which is block-encoded in the quantum walk operator, is symmetric and its eigenvalues and singular values coincide. The results of quantum eigenvalue processing suggest that under these exact restrictions, their algorithm provides
+
+it seems possible that applying the QSVT framework in this context may be overkill and quantum eigenvalue transform may be sufficient. If this is true then we may further reason that extensions to QET such as the one offered by GQSP may offer speedups for key subroutines in the search algorithm, including amplitude amplification and fast forwarding.
+
+The more recent work of Chakraborty et. al suggests that it is possible to significantly reduce space overhead, in terms of the number of ancilla qubits, when applying polynomial transformations to Hamiltonians. While we aren't explicitly working with simulation in this work, the discriminant matrix is Hermitian and can thus be cast to this context.
+
+2. Can QSVT and its extensions demonstrate a quantum advantage to search on general (potentially non-reversible) ergodic Markov chains compared to classical algorithms?
+
+Key to answering this question will be a detailed analysis of [quantum eigenvalue processing](https://arxiv.org/abs/2401.06240) by Guang How Low. We know that many properties of the transition matrix and corresponding discriminant matrix are preserved with the removal of the reversibility assumption. In particular, both still have their largest eigenvalue (in absolute terms) being one, with geometric multiplicity one and corresponding to a unique stationary distribution. However, in the absence of reversibility, the discriminant matrix is no longer symmetric so it cannot be given a spectral decomposition and its eigenvalues and singular values do not coincide. The quantum eigenvalue processing algorithm provides a means to apply polynomial transformations to the eigenvalues of matrices that cannot be given a spectral decomposition, in which case

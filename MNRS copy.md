@@ -88,7 +88,7 @@ Recall that the left singular vector of  $`D(P)`$  was  $`\sqrt{\vec{\pi}}`$ . T
 \ket{\pi} = \sum_{x \in X} \sqrt{\pi_x} \ket{x}\ket{p_x} = \sum_{y\in X} \sqrt{\pi_y}\ket{p^*_y}\ket{y}
 ```
 
-**(something about D(P) and P are in this basis).** Thus, Szegedy's theorem tells us that  $`\ket{\pi}`$  is a unique eigenvector of  $`W(P)`$  associated with phase  $`\theta = 0`$  (and we can verify this by checking  $`W(P)\ket{\pi} = \ket{\pi}`$ ) and that all other eigenvectors have phase  $`\theta > 0`$ . For analytical convenience, we denote  $`\Delta = 2\theta_s`$  where  $`\theta_s`$  is associated with the second largest singular value of  $`D(P)`$  (smallest non-zero phase).
+**(something about D(P) and P are in this basis).** Thus, Szegedy's theorem tells us that  $`\ket{\pi}`$  is a unique eigenvector of  $`W(P)`$  associated with phase  $`\theta = 0`$  (and we can verify this by checking  $`W(P)\ket{\pi} = \ket{\pi}`$ ) and that all other eigenvectors have phase  $`0 < \theta < \pi/2`$ , where the second equality comes from the fact that the phase factors are multiplied by two to get a final range of  $`[0,\pi]`$ . For analytical convenience, we denote  $`\Delta = 2\theta_s`$  where  $`\theta_s`$  is associated with the second largest singular value of  $`D(P)`$  (smallest non-zero phase).
 
 ## Assumptions of search and a classical algorithm
 
@@ -234,7 +234,7 @@ We now introduce a second register such that the state of the composite system i
 \ket{v}\ket{0}^{ks}
 ```
 
-where  $`k`$  is any integer and  $`s =\lceil{\log_2(\frac{2\pi}{\Delta(P)})\rceil}`$ . We start with the case where  $`k=1`$ . There is a well known algorithm called quantum phase estimation (QPE) which, given access to an eigenvector of  $`W(P)`$  in the first register and access to controlled  $`W(P)`$ , can encode the eigenphase of  $`W(P)`$  associated with the eigenvector onto the second register at cost  $`O(1/\Delta(P)U)`$ . Suppose,  $`\ket{v}`$  is an eigenvector of  $`W(P)`$  and  $`\ket{\omega}`$  is the state of the second register after QPE. QPE guarantees that, if  $`\ket{v} = \ket{\sqrt{\pi}_p}`$ , then  $`\ket{\omega} = \ket{0}^s`$  and if instead  $`\braket{\omega|\sqrt{\pi}_p} = 0`$ , then 
+where  $`k`$  is any integer and  $`s =\lceil{\log_2(\frac{2\pi}{\Delta(P)})\rceil}`$ . We start with the case where  $`k=1`$ . There is a well known algorithm called quantum phase estimation (QPE) which, given access to an eigenvector of  $`W(P)`$  in the first register and access to controlled  $`W(P)`$ , can encode the eigenphase of  $`W(P)`$  associated with the eigenvector onto the second register at cost  $`O(1/\Delta(P)U)`$ . Suppose,  $`\ket{v}`$  is an eigenvector of  $`W(P)`$  and  $`\ket{\omega}`$  is the state of the second register after QPE. QPE guarantees that, if  $`\ket{v} = \ket{\sqrt{\pi}_p}`$ , then  $`\ket{\omega} = \ket{0}^s`$  and if instead  $`\ket{v}`$  is some other eigenvector with phase  $`\theta > 0`$ , then 
 
 ```math
 \braket{0^s|\omega} = \sin(2^s \theta)/2^s\sin(\theta)<1/2
@@ -262,9 +262,9 @@ QPE\ket{v}\ket{0}^s = a_0\ket{\sqrt{\pi}_p}\ket{0^s} + \sum_{j} a^+_j \ket{+w_j}
 which can in turn be further decomposed
 
 ```math
-QPE\ket{v}\ket{0}^s= a_0\ket{\sqrt{\pi}_p}\ket{0^s} + \sum_{\pm j} a^{\pm}_j\braket{0^s|\omega_j} \ket{w_j}\ket{\omega^0_j} + \sum_{\pm j} a^{\pm}_j(1-\braket{0^s|\omega_j}) \ket{w_j}\ket{\omega^{\not{0}}_j}\\
+QPE\ket{v}\ket{0}^s= a_0\ket{\sqrt{\pi}_p}\ket{0^s} + \sum_{\pm j} a^{\pm}_j\braket{0^s|\omega_j} \ket{w_j}\ket{0^s} + \sum_{\pm j} a^{\pm}_j(1-\braket{0^s|\omega_j}) \ket{w_j}\ket{{\not{0}}}\\
 
-=: a_0\ket{\sqrt{\pi}_p}\ket{0^s} + \ket{v_0} + \ket{v_1}
+=: a_0\ket{\sqrt{\pi}_p}\ket{0^s} + \ket{v_0}\ket{0^s} + \ket{v_1}
 ```
 
 
@@ -276,7 +276,7 @@ QPE\ket{v}\ket{0}^{ks}= a_0\ket{\sqrt{\pi}_p}\ket{0^{ks}} + \sum_{\pm j} a^{\pm}
 =: a_0\ket{\sqrt{\pi}_p}\ket{0^{ks}} + \ket{v_0} + \ket{v_1}
 ```
 
-Since the contents of each of the  $`k`$  registers are independent of one another, it follows that  $`||\ket{v_0}|| \le 2^{-k}`$ . Thus we can approximate  $`R_\pi`$  by first applying QPE, then the reflection  $`2\ket{0^{ks}}\bra{0^{ks}} - I`$  on the  $`k`$  second registers, and finally reverse the phase estimation such that the second registers revert to all zeros. The total cost of this procedure is  $`O(k/\Delta(P)U)`$ . Suppose we denote this circuit by  $`R(P)`$ . For any  $`\ket{v}`$  orthogonal to  $`\ket{\sqrt{\pi}_p}`$  its clear that 
+Since the contents of each of the  $`k`$  registers are independent of one another, it follows that  $`||\ket{v_0}|| \le 2^{-k}`$ . Thus we can approximate  $`R_\pi`$  by first applying QPE, then the reflection  $`2\ket{0^{ks}}\bra{0^{ks}} - I`$  on the  $`k`$  second registers, and finally reverse the phase estimation such that the second registers revert to all zeros. The total cost of this procedure is  $`O(kU/\Delta(P))`$ . Suppose we denote this circuit by  $`R(P)`$ . For any  $`\ket{v}`$  orthogonal to  $`\ket{\sqrt{\pi}_p}`$  its clear that 
 
 ```math
 ||(R(P)+I)\ket{v}|| = ||(R(P)+I)(\ket{v_0}+\ket{v_1})|| = ||\ket{v_0}-\ket{v_1} + \ket{v_0} + \ket{v_1}|| = 2||\ket{v_0}|| \le 2^{1-k}
@@ -315,13 +315,13 @@ Thus we have
 ```
 
 
-At time  $`T`$  we have 
+At time  $`1/\varepsilon`$  we have 
 
 ```math
-||\ket{\psi_T} - \ket{\phi_T}||=T2^{1-k}
+||\ket{\psi_T} - \ket{\phi_T}||=2^{1-k}/\varepsilon
 ```
 
-Clearly, if we choose  $`k = \log_2(T) + c`$  this becomes  $`2^{1-c}`$  which we can make arbitrarily small with large enough  $`c`$ . Finally, using the fact that  $`\Delta(P) \in \Theta(\sqrt{\delta(P)})`$ , we have that
+Clearly, if we choose  $`k = \log_2(1/\varepsilon) + c`$  this becomes  $`2^{1-c}`$  which we can make arbitrarily small with large enough  $`c`$ . Finally, using the fact that  $`\Delta(P) \in \Theta(\sqrt{\delta(P)})`$ , we have that
 
 
 ```math
@@ -330,4 +330,4 @@ O\left(S + \frac{1}{\sqrt{\varepsilon}}\left(C + \frac{\log T}{\sqrt{\delta(P)}}
 
 
 ## A second pass at exacting search
-This part is all about removing the  $`\log T`$  factor from the above time complexity.
+This part is all about removing the  $`\log 1/\varepsilon`$  factor from the above time complexity.
